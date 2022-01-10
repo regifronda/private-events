@@ -23,6 +23,9 @@ class EventsController < ApplicationController
     end
   end
 
+  def show
+    
+  end
   private
 
   def require_login
