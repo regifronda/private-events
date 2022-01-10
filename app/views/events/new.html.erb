@@ -8,12 +8,12 @@
 
 <%= form_with model: @event, local:true do |form| %>
   <%= label_tag(:name, "Name:") %><br>
-  <%= form.text_field :name %>
+  <%= form.text_field :name %><br>
   <%= label_tag(:description, "Description:") %><br>
-  <%= form.text_field :description %>
-  <%= label_tag(:date, "Date") %><br>
-  <%= form.date_field :date %>
+  <%= form.text_field :description %><br>
+  <%= label_tag(:date, "Date:") %><br>
+  <%= form.date_field :date %><br>
   <%= label_tag(:location, "Location:") %><br>
-  <%= form.text_field :location %>
+  <%= form.text_field :location %><br>
   <%= form.submit "Create" %>
 <% end %>
