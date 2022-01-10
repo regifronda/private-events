@@ -1,7 +1,19 @@
+<% if @event.errors.any? %>
+    <ul>
+    <% @event.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+<% end %>
+
 <%= form_with model: @event, local:true do |form| %>
+  <%= label_tag(:name, "Name:") %><br>
   <%= form.text_field :name %>
+  <%= label_tag(:description, "Description:") %><br>
   <%= form.text_field :description %>
+  <%= label_tag(:date, "Date") %><br>
   <%= form.date_field :date %>
+  <%= label_tag(:location, "Location:") %><br>
   <%= form.text_field :location %>
   <%= form.submit "Create" %>
 <% end %>
