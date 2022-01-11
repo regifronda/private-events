@@ -1,0 +1,5 @@
+<h1><%= @event.name %><br></h1>
+<strong>Creator: <%= User.find(@event.user_id).username %><br></strong>
+<p>Date: <%= @event.date %></p>
+<p>Location: <%= @event.location %></p>
+<p><%= @event.description %></p>
