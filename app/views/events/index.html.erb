@@ -1,7 +1,7 @@
 <div class="event list">
   <h1>Event List</h1>
   <% @events.each do |event| %>
-    <strong><%= link_to event.name, event %><br></strong>
+    <strong><%= link_to event.name, event %></strong><br>
   <% end %><br>
   <li><%= link_to "Created Events", "/users/show"  %></li>
 </div>
