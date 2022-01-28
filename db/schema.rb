@@ -14,11 +14,11 @@ ActiveRecord::Schema.define(version: 2022_01_13_192513) do
 
   create_table "attendances", force: :cascade do |t|
     t.integer "event_id"
-    t.integer "physician_id"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["event_id"], name: "index_attendances_on_event_id"
-    t.index ["physician_id"], name: "index_attendances_on_physician_id"
+    t.index ["user_id"], name: "index_attendances_on_user_id"
   end
 
   create_table "events", force: :cascade do |t|
@@ -45,5 +45,5 @@ ActiveRecord::Schema.define(version: 2022_01_13_192513) do
   end
 
   add_foreign_key "attendances", "events"
-  add_foreign_key "attendances", "physicians"
+  add_foreign_key "attendances", "users"
 end
