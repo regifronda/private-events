@@ -27,6 +27,11 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
   end
 
+  def attend
+    @event = Event.find(params[:id])
+    @event.attendees << current_user
+    @event.save
+  end
   private
 
   def require_login
