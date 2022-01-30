@@ -3,3 +3,7 @@
 <p>Date: <%= @event.date %></p>
 <p>Location: <%= @event.location %></p>
 <p><%= @event.description %></p>
+ <%= button_to 'Attend', attend_event_path(@event), method: :post, confirm: 'really?' %>
+<% @event.attendees.each do |attendee| %>
+  <p><%= attendee.username %></p>
+<% end %><br>
