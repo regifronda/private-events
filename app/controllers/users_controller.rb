@@ -3,5 +3,8 @@ class UsersController < ApplicationController
 
   def show
     @user_events = current_user.events.all
+    @user = User.find(params[:id])
   end
+
+  
 end
