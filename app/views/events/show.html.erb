@@ -4,6 +4,7 @@
 <p>Location: <%= @event.location %></p>
 <p><%= @event.description %></p>
  <%= button_to 'Attend', attend_event_path(@event), method: :post, confirm: 'really?' %>
+ <h2>Attendees</h2>
 <% @event.attendees.each do |attendee| %>
   <p><%= attendee.username %></p>
 <% end %><br>
