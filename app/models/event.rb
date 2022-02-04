@@ -8,8 +8,5 @@ class Event < ApplicationRecord
   has_many :attendees, through: :attendances, source: :user
 
   scope :upcoming, -> { where("date > ?", Date.today) }
-
-  def self.past
-    self.where("date < ?", Date.today)
-  end
+  scope :past, -> { where("date < ?", Date.today) }
 end
