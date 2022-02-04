@@ -1,6 +1,10 @@
 <div class="event list">
-  <h1>Event List</h1>
-  <% @events.each do |event| %>
+  <h1>Upcoming Events</h1>
+  <% @events.upcoming.each do |event| %>
+    <strong><%= link_to event.name, event %></strong><br>
+  <% end %>
+  <h1>Past Events</h1>
+  <% @events.past.each do |event| %>
     <strong><%= link_to event.name, event %></strong><br>
   <% end %><br>
   <li><%= link_to "New Event", "/events/new" %></li>
