@@ -6,8 +6,8 @@
     <p><%= user_event.location %></p>
     <p><%= user_event.description %></p>
   <% end %>
-  <h1>Attended</h1>
-  <% @user.attended_events.each do |event| %>
+  <h1>Attending Events:</h1>
+  <% @user.attended_events.order(date: :asc).where("date > ?", Date.today).each do |event| %>
     <p><%= event.name %></p>
   <% end %>
 </div>
